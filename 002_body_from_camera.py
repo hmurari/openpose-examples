@@ -65,6 +65,7 @@ try:
     video = cv2.VideoCapture(camera)
 
     while (True):
+
         
         # Read image.
         ret, frame = video.read()
@@ -79,9 +80,10 @@ try:
         opWrapper.emplaceAndPop(op.VectorDatum([datum]))
 
         # Display Image
-        # print("Body keypoints: \n" + str(datum.poseKeypoints))
+        print("Body keypoints: \n" + str(datum.poseKeypoints))
+        print('# # # # # # # # # # # # # # # # # # # # # # # # # #')
         cv2.imshow("OpenPose 1.6.0 - Tutorial Python API", datum.cvOutputData)
-        if cv2.waitKey(0) == 27:
+        if cv2.waitKey(10) == 27:
             # ESC to quit
             break
 
